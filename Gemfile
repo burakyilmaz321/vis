@@ -23,3 +23,7 @@ group :test do
   gem 'guard-minitest'
   gem 'mini_backtrace'
 end
+
+group :production do
+  gem 'pg'
+end
