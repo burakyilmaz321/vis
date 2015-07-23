@@ -4,6 +4,5 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
   def vis
-    render text: "visağğ"
   end
 end
