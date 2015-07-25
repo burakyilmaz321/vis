@@ -10,12 +10,18 @@ class UserFirmsController < ApplicationController
 
   def create
     @user_firm = UserFirm.new(user_firm_params)
-    @user_firm.save
+    if @user_firm.save
+      flash[:success] = "Welcome"
+      redirect_to @user_firm
+    else
+      render 'new'
+    end
   end
   
   private
   def user_firm_params
     params.require(:user_firm).permit(:name, :city, 
-                                      :user_attributes => [:name, :email])
+                                      :users_attributes => [:name, :email, :password, 
+                                                            :password_confirmation])
   end
 end

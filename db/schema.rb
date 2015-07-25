@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150723202602) do
+ActiveRecord::Schema.define(version: 20150725110407) do
 
   create_table "user_firms", force: :cascade do |t|
     t.string   "name"
@@ -24,8 +24,9 @@ ActiveRecord::Schema.define(version: 20150723202602) do
     t.string   "name"
     t.string   "email"
     t.integer  "user_firm_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "password_digest"
   end
 
   add_index "users", ["user_firm_id"], name: "index_users_on_user_firm_id"
